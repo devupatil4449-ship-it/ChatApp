@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chat App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">ChatApp</div>
+
+        <div class="search-box">
+            <div class="search-box">
+              <input type="text" placeholder="Search contacts...">
+        </div>
+        </div>
+
+        <div class="contact-list">
+
+            <div class="contact-card">
+                <div class="avatar"></div>
+                <div class="contact-info">
+                    <h4>Vishakha</h4>
+                    <p>Hey!</p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="avatar"></div>
+                <div class="contact-info">
+                    <h4>Sarah</h4>
+                    <p>Wassup.</p>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <div class="avatar"></div>
+                <div class="contact-info">
+                    <h4>Amrita</h4>
+                    <p>Thanks</p>
+                </div>
+            </div>
+
+        </div>
+    </aside>
+
+    <!-- Chat Area -->
+    <main class="chat-area">
+
+        <header class="chat-header">
+            Vishkaha
+        </header>
+
+            <section class="messages" id="messages">
+            <div class="message received">
+                Hi! How are you?
+            </div>
+
+            <div class="message sent">
+                I'm doing great. What about you?
+            </div>
+
+            <div class="message received">
+                Pretty good! Working on a new project.
+            </div>
+
+            <div class="message sent">
+                Sounds interesting!
+            </div>
+        </section>
+
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <button id="sendBtn">Send</button>        
+        </div>
+
+    </main>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

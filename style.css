@@ -1,0 +1,298 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top left,#7c3aed 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#06b6d4 0%,transparent 35%),
+    #0f172a;
+}
+
+/* MAIN LAYOUT */
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:320px;
+    background:rgba(15,23,42,0.75);
+    backdrop-filter:blur(20px);
+    border-right:1px solid rgba(255,255,255,0.08);
+    display:flex;
+    flex-direction:column;
+}
+
+.logo{
+    padding:28px;
+    font-size:30px;
+    font-weight:800;
+    color:white;
+    text-align:center;
+    letter-spacing:1px;
+}
+
+.search-box{
+    padding:15px;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    color:white;
+}
+
+.search-box input::placeholder{
+    color:#cbd5e1;
+}
+
+.contact-list{
+    flex:1;
+    overflow-y:auto;
+    padding:10px;
+}
+
+.contact-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-radius:18px;
+    cursor:pointer;
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.contact-card:hover{
+    background:rgba(255,255,255,0.08);
+    transform:translateX(6px);
+}
+
+.active-contact{
+    background:rgba(139,92,246,0.25);
+    border:1px solid rgba(139,92,246,0.4);
+}
+
+.avatar{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:
+    linear-gradient(
+    135deg,
+    #ec4899,
+    #8b5cf6
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.contact-info h4{
+    color:white;
+    font-size:16px;
+}
+
+.contact-info p{
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+/* CHAT AREA */
+
+.chat-area{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+}
+
+/* HEADER */
+
+.chat-header{
+    height:80px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+
+    color:white;
+}
+
+.chat-header h3{
+    font-size:18px;
+}
+
+.chat-header small{
+    color:#22c55e;
+}
+
+/* MESSAGE AREA */
+
+.messages{
+    flex:1;
+    overflow-y:auto;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* MESSAGE BUBBLES */
+
+.message{
+    padding:15px 20px;
+    max-width:60%;
+    line-height:1.5;
+    font-size:15px;
+}
+
+.received{
+    align-self:flex-start;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+
+    color:white;
+
+    border-radius:24px 24px 24px 8px;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.sent{
+    align-self:flex-end;
+
+    background:
+    linear-gradient(
+    135deg,
+    #8b5cf6,
+    #ec4899
+    );
+
+    color:white;
+
+    border-radius:24px 24px 8px 24px;
+
+    box-shadow:
+    0 10px 25px rgba(236,72,153,0.25);
+}
+
+/* INPUT AREA */
+
+.chat-input{
+    padding:20px;
+    display:flex;
+    gap:15px;
+
+    background:rgba(255,255,255,0.04);
+    backdrop-filter:blur(20px);
+
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.chat-input input{
+    flex:1;
+
+    padding:16px 18px;
+
+    border:none;
+    outline:none;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+}
+
+.chat-input input::placeholder{
+    color:#cbd5e1;
+}
+
+.chat-input button{
+    padding:16px 30px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #8b5cf6,
+    #ec4899
+    );
+
+    color:white;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.chat-input button:hover{
+    transform:translateY(-2px);
+    box-shadow:
+    0 8px 20px rgba(139,92,246,0.35);
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#8b5cf6;
+    border-radius:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .chat-area{
+        width:100%;
+    }
+
+    .message{
+        max-width:80%;
+    }
+
+}
+.message small{
+    display:block;
+    margin-top:5px;
+    font-size:11px;
+    opacity:0.7;
+    text-align:right;
+}
